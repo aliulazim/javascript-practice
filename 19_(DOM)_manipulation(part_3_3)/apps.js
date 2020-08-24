@@ -95,7 +95,40 @@ myImg.src = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxANCggI
 const a = document.querySelector('a');
 document.body.insertBefore(myImg, a);
 
+
 // => insertAdjacentElement()
 
+const bold = document.createElement('b');
+bold.innerText = 'Bold Text';
+const firstP = document.querySelector('p');
+firstP.insertAdjacentElement("beforebegin", bold);
+firstP.insertAdjacentElement("beforeend", bold);
+firstP.insertAdjacentElement("afterbegin", bold);
+firstP.insertAdjacentElement("afterend", bold);
+
 // => removeChild()
+
+// const ul = document.querySelector('ul');
+// undefined
+// const lis = document.querySelectorAll('li');
+// undefined
+// lis
+// NodeList(5) [li.single-item, li.single-item, li.single-item, li.single-item, li.single-item]
+// const deleted = ul.removeChild(lis[0]);
+// undefined
+// deleted
+// <li class="single-item">Item One</li>
+
+
 // => remove()
+
+// bold
+// <b>​Bold Text​</b>​
+// bold.remove()
+// undefined
+// firstP
+// <p class="paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem veniam perferendis nihil
+//             sed dolores sint alias tempore,suscipit, velit rerum, sit consequuntur sapiente illum assumenda delectus 
+//             natus. Est, libero voluptatibus?</p>
+// firstP.remove()
+// undefined
