@@ -1,118 +1,43 @@
-// ASSIGNMENT OPERATOR VS COMPARISON OPERATOR
+// 2nd Way
 
-// let number = 20; // Assignment operator (=)
-// if number == 20; // Comparison operator (== / ===)
+// const btn = document.querySelector('button');
+// btn.onclick = function(){
+//     alert('Hello Wrold');
+// };
 
-
-
-
-
-// BASIC IF STATEMENT
-
-// if (number == 200){
-//     console.log("Yess!!!")
-// }else{
-//     console.log("NO!!!!!")
-// }
+// btn.onclick = function(){
+//     console.log('Hello Wrold');
+// };
 
 
-// COMPARISON OPERRATORS: >, <, >=, <=, ===, and !==
-
-// let number = 0;
-// if (number > 0){
-//     console.log("The Number is Positive!!!")
-// } else if (number < 0){
-//     console.log("The Number is Negative!!!!")
-// }else{
-//     console.log("The Number is a Zero!!!")
-// }
+// 3rd Way -----Recomonded
+// const btn = document.querySelector('button');
+// btn.addEventListener('dblclick', function() {
+//    alert('Hello');
+//    console.log('I am simple text'); 
+// });
 
 
-// let number =17;
-// if (number >= 18){
-//     console.log("Yor are a voter!!!")
-// } else{
-//     console.log("You are not a voter! Basay jow!!!")
-// }
+// Color Box Project
+const colors = ['red', 'yellow', 'green', 'blue', 'orange', 'purple', 'violet', 'indigo'];
 
+const container = document.querySelector('section');
+const h2 = document.querySelector('h2');
+const selectedColor = document.querySelector('#selectedColor');
 
-let number =18;
-if (number != 18){
-    console.log("Yor are a voter!!!");
-} else{
-    console.log("You are not a voter! Basay jow!!!");
+for (let color of colors){
+    const box = document.createElement('div'); // Create a new div
+    box.classList.add('box'); // Div inside create class box
+
+    container.appendChild(box); // Class .box input DOM
+
+    box.style.backgroundColor = color; // .box background color set
+
+    // When box click then cheang text and color
+    box.addEventListener('click', function() {
+    h2.innerText = 'You have selected: '; // When click box then cheang  h2 text
+    selectedColor.innerText = box.style.backgroundColor;  // When click box then cheang  span text
+    selectedColor.style.backgroundColor = box.style.backgroundColor; // When click box then cheang  span text background color
+        
+    });
 }
-
-// !true = false;
-// !false = true;
-
-
-
-// DEFFERENCE BETWEEN == AND ===
-
-// let num = "32";  // (==) Just check value and result show (Yes! It's 32)
-// if (num == 32){
-//     console.log("Yes! It's 32")
-//     console.log(typeof num);
-// }
-
-
-// let num = "32";  // (===) Check value and Data Type then  result show (No! It's Not  32)
-// if (num === 32){
-//     console.log("Yes! It's 32")
-//     console.log(typeof num);
-// }else{
-//     console.log("No! It's Not 32")
-//     console.log(typeof num);
-// }
-
-
-// LOGICAL OPERATORS: &&, ||, and !
-
-// let name = "ABDULLAH";
-// let age = 25;
-// let haveDegree = true;
-// let experience = 5;
-
-// // condition: Degree and 2+ years experinence ( && use 2ta condition true haya lagbe)
-
-// if (haveDegree == true && experience >= 2) {
-//     console.log(name + ", You are capable to work here!");
-// }else{
-//     console.log("Sorry! Try again later");
-// }
-
-
-let name = "ABDULLAH";
-let age = 25;
-let haveDegree = false;
-let experience = 5;
-
-// condition: Degree or 18+ years age ( || use je kono 1ta  condition true holai habe)
-if (haveDegree == true || age >= 18) {
-    console.log(name + ", You are capable to work here!");
-}else{
-    console.log("Sorry! Try again later");
-}
-
-/*
-
-=============== AND && =======================
-true + true = true
-true + false = false
-false + true = false
-false + false = false
-
-=============== OR || =======================
-true + true = true
-true + false = true
-false + true = true
-false + false = false
-
-=============== NOT ! =======================
-
-!true = false
-!false = true
-
-
-*/
