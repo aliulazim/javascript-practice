@@ -1,118 +1,56 @@
-// ASSIGNMENT OPERATOR VS COMPARISON OPERATOR
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const numbersDuplicate = [1, 2, 2, 3, 3, 4, 5, 7, 1, 9, 4, 5, 6, 7, 8, 9];
 
-// let number = 20; // Assignment operator (=)
-// if number == 20; // Comparison operator (== / ===)
+const students =[
+    {name: 'Rahim', number: 70, subject: 'Math'},
+    {name: 'Karim', number: 85, subject: 'Math'},
+    {name: 'Ram', number: 33, subject: 'English'},
+    {name: 'Shyam', number: 80, subject: 'Bangla'},
+    {name: 'Jodu', number: 75, subject: 'Bangla'},
+    {name: 'Modhu', number: 20, subject: 'Bangla'}
+];
 
-
-
-
-
-// BASIC IF STATEMENT
-
-// if (number == 200){
-//     console.log("Yess!!!")
-// }else{
-//     console.log("NO!!!!!")
-// }
+let findTextHeading = "Start Find Here";
+let filterTextHeading = "Start Filter Here";
 
 
-// COMPARISON OPERRATORS: >, <, >=, <=, ===, and !==
+// Find
 
-// let number = 0;
-// if (number > 0){
-//     console.log("The Number is Positive!!!")
-// } else if (number < 0){
-//     console.log("The Number is Negative!!!!")
-// }else{
-//     console.log("The Number is a Zero!!!")
-// }
+console.log(findTextHeading);
+
+const greaterThanThree = numbers.find(function(num){
+    return num > 3;
+});
+console.log(greaterThanThree);
 
 
-// let number =17;
-// if (number >= 18){
-//     console.log("Yor are a voter!!!")
-// } else{
-//     console.log("You are not a voter! Basay jow!!!")
-// }
-
-
-let number =18;
-if (number != 18){
-    console.log("Yor are a voter!!!");
-} else{
-    console.log("You are not a voter! Basay jow!!!");
-}
-
-// !true = false;
-// !false = true;
+const failedStudent = students.find((exam) => {
+    return exam.number < 33;
+});
+console.log(failedStudent.name , failedStudent.number , failedStudent.subject);
 
 
 
-// DEFFERENCE BETWEEN == AND ===
-
-// let num = "32";  // (==) Just check value and result show (Yes! It's 32)
-// if (num == 32){
-//     console.log("Yes! It's 32")
-//     console.log(typeof num);
-// }
+// Filter
+console.log(filterTextHeading);
 
 
-// let num = "32";  // (===) Check value and Data Type then  result show (No! It's Not  32)
-// if (num === 32){
-//     console.log("Yes! It's 32")
-//     console.log(typeof num);
-// }else{
-//     console.log("No! It's Not 32")
-//     console.log(typeof num);
-// }
+const newNum = numbers.filter((num) => {
+    return num > 3;
+});
+console.log(newNum);
 
 
-// LOGICAL OPERATORS: &&, ||, and !
+const numberUpper70 = students.filter((exam) => {
+    return exam.number >= 70 && exam.subject === 'Bangla';
+});
 
-// let name = "ABDULLAH";
-// let age = 25;
-// let haveDegree = true;
-// let experience = 5;
-
-// // condition: Degree and 2+ years experinence ( && use 2ta condition true haya lagbe)
-
-// if (haveDegree == true && experience >= 2) {
-//     console.log(name + ", You are capable to work here!");
-// }else{
-//     console.log("Sorry! Try again later");
-// }
+console.log(numberUpper70);
 
 
-let name = "ABDULLAH";
-let age = 25;
-let haveDegree = false;
-let experience = 5;
 
-// condition: Degree or 18+ years age ( || use je kono 1ta  condition true holai habe)
-if (haveDegree == true || age >= 18) {
-    console.log(name + ", You are capable to work here!");
-}else{
-    console.log("Sorry! Try again later");
-}
+const noDuplicate = numbersDuplicate.filter((value, index, arr) => {
+    return arr.indexOf(value) === index;
+});
 
-/*
-
-=============== AND && =======================
-true + true = true
-true + false = false
-false + true = false
-false + false = false
-
-=============== OR || =======================
-true + true = true
-true + false = true
-false + true = true
-false + false = false
-
-=============== NOT ! =======================
-
-!true = false
-!false = true
-
-
-*/
+console.log(noDuplicate);
