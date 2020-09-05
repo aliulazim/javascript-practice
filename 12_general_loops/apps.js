@@ -193,3 +193,56 @@ console.timeEnd("forEach")
 console.time("for..of")
 for(elem3 of timeArray){}
 console.timeEnd("for..of")
+
+
+
+// Write a loop to find sum of all odd numbers from 1 to n using for loop. Use some Logic to find sum of odd numbers
+
+
+let num1 = 50;
+let odsum = 0;
+for(let i = 1; i <= num1; i++) {
+  if(i % 2 !== 0) {
+    console.log(i);
+    odsum = odsum + i;
+  }
+}
+
+console.log("Total of Odd Number : " + odsum);
+
+
+
+// Write a loop to find sum of all even numbers from 1 to n using for loop. Use some Logic to find sum of even numbers
+
+
+let num2 = 75;
+let sum = 0;
+for(let i = 1; i <= num2; i++) {
+  if(i % 2 === 0) {
+    console.log(i);
+    sum = sum + i;
+  }
+}
+
+console.log("Total of Even Number : " + sum);
+
+
+/*
+  Use While Loop
+*/
+
+let num3 = 75;
+let evbSum = 0;
+let x = 1;
+
+while (x <= num3){
+
+    if( x % 2 === 0){
+        console.log(x);
+        evbSum = evbSum + x;
+    }
+    
+    x++;
+    
+}
+console.log("Total of Even Number : " + evbSum);
